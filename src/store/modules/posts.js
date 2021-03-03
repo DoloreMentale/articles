@@ -8,7 +8,9 @@ export default {
           if (!localStorage.getItem('posts')) {
             context.commit('setPosts', r.data)
             context.commit('saveHistoryChange')
-          } else context.commit('getPostsFromLocalStorage')
+          } else {
+            context.commit('getPostsFromLocalStorage')
+          }
         })
         .catch(e => console.log(e))
     },
